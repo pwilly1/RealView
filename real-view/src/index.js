@@ -14,7 +14,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <Router>
       <div className="App">
         <Routes>
           <Route path="/" element={<Layout />} />
@@ -26,7 +25,6 @@ function App() {
           <Route path="/sell" element={<Sell />} />
         </Routes>
       </div>
-    </Router>
     </BrowserRouter>
   );
 }
