@@ -1,0 +1,101 @@
+#banner {
+    background-color: white;
+    color: white;
+    text-align: center;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+}
+.search-section input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    background-color: rgb(29, 49, 53);
+
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: rgb(29, 49, 53);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-section button:hover {
+    background-color: #eee;
+}
+
+.featured-listings {
+    background-color: #fff;
+    padding: 40px 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-listings h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.listing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.listing-box {
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.listing-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.why-choose-us {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    
+}
+
+.why-choose-us h2 {
+    margin-bottom: 20px;
+}
+
+.choose-box {
+    display: inline-block;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.choose-box p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* General Utility Classes */
+.centered-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
