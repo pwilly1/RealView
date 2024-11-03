@@ -1,0 +1,109 @@
+/* Market Statistics Page */
+.market-statistics {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.market-statistics h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.market-statistics p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    display: inline-block;
+    width: 20%;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.filter-section select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.charts-grid {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.chart-box {
+    position: relative;
+    width: 425px;
+    height: 350px; /* Increase the height to accommodate the title and image */
+    
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding is included in the width/height */
+}
+
+.chart-box h3 {
+    margin: 0;
+    padding-bottom: 10px; /* Space between the title and the image */
+    font-size: 18px;
+}
+
+
+
+/* Best Time to Buy Calculator Section */
+.buy-time-calculator {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.buy-time-calculator h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.buy-time-calculator p {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.buy-time-calculator button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-time-calculator button:hover {
+    background-color: #2980b9;
+}
+
+#buy-time-result {
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}

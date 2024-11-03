@@ -1,11 +1,12 @@
 import React from 'react';
 import '../css/listings.css';
 
+
 const Listing = (listing) => {
   return (
     <div className="listing-box">
-      <h3>{listing.title}</h3>
-      <p>Location: {listing.location}</p>
+      <img className="image-placeholder" src={listing.image} alt={listing.title} />
+      <p>Address: {listing.address}</p>
       <p>Price: {listing.price}</p>
       <p>Bedrooms: {listing.bedrooms}</p>
       <p>Bathrooms: {listing.bathrooms}</p>
@@ -14,3 +15,4 @@ const Listing = (listing) => {
 };
 
 export default Listing;
+

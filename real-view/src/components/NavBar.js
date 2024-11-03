@@ -6,15 +6,16 @@ const NavBar = () => {
   return (
     <nav id="main-nav" className="hidden-small">
       <ul>
-        <li>Home</li>
-        <li><a href="/listings">Property Listing</a></li>
-        <li>About Us</li>
-        <li>Agent Directory</li>
-        <li>Market Statistics</li>
-        <li>List Property</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/listings">Property Listing</Link></li>
+        <li><Link to="/about">About Us</Link></li>
+        <li><Link to="/agents">Agent Directory</Link></li>
+        <li><Link to="/stats">Market Statistics</Link></li>
+        <li><Link to="/sell">List Property</Link></li>
       </ul>
     </nav>
   );
 };
 
 export default NavBar;
+
