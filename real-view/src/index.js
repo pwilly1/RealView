@@ -13,6 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function App() {
   return (
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Router>
       <div className="App">
         <Routes>
@@ -26,6 +27,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </BrowserRouter>
   );
 }
 
