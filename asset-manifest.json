@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/RealView/static/css/main.da700e7d.css",
+    "main.js": "/RealView/static/js/main.9a2009e3.js",
+    "index.html": "/RealView/index.html",
+    "main.da700e7d.css.map": "/RealView/static/css/main.da700e7d.css.map",
+    "main.9a2009e3.js.map": "/RealView/static/js/main.9a2009e3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da700e7d.css",
+    "static/js/main.9a2009e3.js"
+  ]
+}
