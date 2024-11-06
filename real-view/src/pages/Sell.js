@@ -12,7 +12,6 @@ const Sell = () => {
         <h2>How Would You Like to Sell?</h2>
         <div className="options">
           <button onClick={() => setShowSellerForm(true)}>I’m a Seller</button>
-          <button onClick={() => (window.location.href = 'admin-dashboard.html')}>I’m an Admin</button>
         </div>
       </section>
       {showSellerForm && <SellForm />}
