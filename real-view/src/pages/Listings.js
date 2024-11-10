@@ -50,7 +50,7 @@ const Listings = () => {
         <div className="listing-grid">
           {listings.map((listing) => (
             <Listing
-              image={listing.image_name} 
+              image={listing.img_name} 
               title={listing.image_name} 
               address={listing.address} 
               price={listing.price} 
