@@ -1,9 +1,20 @@
 import React from 'react';
+import { useState, useEffect } from "react";
+import axios from "axios";  
 import Header from '../components/Header';
 import Listing from '../components/Listing';
 import '../css/listings.css';
 
 const Listings = () => {
+
+  const [listings, setlistings] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get("https://react-backend-4pwh.onrender.com/api/listings");
+      setlistings(response.data);
+    })();
+  }, []);
   
   return (
     <div className="property-listings-page">
@@ -37,71 +48,16 @@ const Listings = () => {
           </div>
         </section>
         <div className="listing-grid">
-               <Listing
-        image={"images/house0.jpg"}
-        title={"Cozy Family Home"}
-        address={"1234 Oak St, Columbia, SC, 29203"}
-        price={"$400,000"}
-        bedrooms={"3"}
-        bathrooms={"2"}
-      />
-      <Listing
-        image={"images/house.jpeg"}
-        title={"Modern Luxury Villa"}
-        address={"5678 Pine Ave, Columbia, SC, 29203"}
-        price={"$535,000"}
-        bedrooms={"4"}
-        bathrooms={"3"}
-      />
-      <Listing
-        image={"images/house2.jpg"}
-        title={"Charming Townhouse"}
-        address={"910 Birch Rd, Columbia, SC, 29203"}
-        price={"$315,000"}
-        bedrooms={"2"}
-        bathrooms={"1.5"}
-      />
-      <Listing
-        image={"images/house3.jpg"}
-        title={"Spacious Single-Family Home"}
-        address={"4321 Elm St, Columbia, SC, 29203"}
-        price={"$390,000"}
-        bedrooms={"3"}
-        bathrooms={"2"}
-      />
-      <Listing
-        image={"images/house4.jpg"}
-        title={"Renovated Home"}
-        address={"7890 Maple Dr, Columbia, SC, 29203"}
-        price={"$315,000"}
-        bedrooms={"2"}
-        bathrooms={"1"}
-      />
-      <Listing
-        image={"images/house5.jpg"}
-        title={"Sunny Bungalow"}
-        address={"6789 Cedar Blvd, Columbia, SC, 29203"}
-        price={"$405,000"}
-        bedrooms={"3"}
-        bathrooms={"2"}
-      />
-      <Listing
-        image={"images/house0.jpg"}
-        title={"Private Retreat"}
-        address={"3456 Palm St, Columbia, SC, 29203"}
-        price={"$500,000"}
-        bedrooms={"4"}
-        bathrooms={"3"}
-      />
-      <Listing
-        image={"images/house2.jpg"}
-        title={"Modern Townhouse"}
-        address={"9876 Spruce Ln, Columbia, SC, 29203"}
-        price={"$330,000"}
-        bedrooms={"2"}
-        bathrooms={"2"}
-      />
-            </div>
+          {listings.map((listing) => (
+            <Listing
+              image={listing.image_name} 
+              title={listing.image_name} 
+              address={listing.address} 
+              price={listing.price} 
+              description={listing.description}
+            />
+          ))}
+        </div>
       </main>
     </div>
   );
