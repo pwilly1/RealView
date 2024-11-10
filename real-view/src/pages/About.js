@@ -27,7 +27,6 @@ const About = () => {
             </p>
 
             <div class="buttons">
-                <a href="contact.html" class="button">Contact Us</a>
                 <a href="#" class="button">Join our Team</a>
             </div>
         </section>
