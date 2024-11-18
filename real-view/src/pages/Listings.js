@@ -14,7 +14,7 @@ const Listings = () => {
       const response = await axios.get("https://react-backend-4pwh.onrender.com/api/listings");
       setlistings(response.data);
     })();
-  }, []);
+  }, []); 
   
   return (
     <div className="property-listings-page">
@@ -54,7 +54,9 @@ const Listings = () => {
               title={listing.image_name} 
               address={listing.address} 
               price={listing.price} 
-              description={listing.description}
+              beds={listing.beds}
+              baths={listing.baths}
+              sqft={listing.sqft}
             />
           ))}
         </div>
