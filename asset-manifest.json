@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/RealView/static/css/main.1d194733.css",
-    "main.js": "/RealView/static/js/main.556e501c.js",
+    "main.css": "/RealView/static/css/main.fa3f488d.css",
+    "main.js": "/RealView/static/js/main.79982d7e.js",
     "static/media/house.jpeg": "/RealView/static/media/house.c48d619385af7edc7c81.jpeg",
     "static/media/house0.jpg": "/RealView/static/media/house0.2d2be2c429a32b678629.jpg",
     "static/media/house2.jpg": "/RealView/static/media/house2.5bd80382aa7505659048.jpg",
     "index.html": "/RealView/index.html",
-    "main.1d194733.css.map": "/RealView/static/css/main.1d194733.css.map",
-    "main.556e501c.js.map": "/RealView/static/js/main.556e501c.js.map"
+    "main.fa3f488d.css.map": "/RealView/static/css/main.fa3f488d.css.map",
+    "main.79982d7e.js.map": "/RealView/static/js/main.79982d7e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d194733.css",
-    "static/js/main.556e501c.js"
+    "static/css/main.fa3f488d.css",
+    "static/js/main.79982d7e.js"
   ]
 }
