@@ -11,6 +11,7 @@ const FeaturedListings = () => {
       <h2>Featured Listings</h2>
       <div className="listing-grid">
       <Listing
+        id="featured-1"
         image={house1}
         title={"Sunny Bungalow"}
         address={"6789 Cedar Blvd, Columbia, SC, 29203"}
@@ -19,6 +20,7 @@ const FeaturedListings = () => {
         bathrooms={"2"}
       />
       <Listing
+        id="featured-2"
         image={house2}
         title={"Private Retreat"}
         address={"3456 Palm St, Columbia, SC, 29203"}
@@ -27,6 +29,7 @@ const FeaturedListings = () => {
         bathrooms={"3"}
       />
       <Listing
+        id="featured-3"
         image={house3}
         title={"Modern Townhouse"}
         address={"9876 Spruce Ln, Columbia, SC, 29203"}

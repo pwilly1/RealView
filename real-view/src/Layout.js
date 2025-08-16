@@ -1,10 +1,13 @@
-import {Outlet, Link} from "react-router-dom";
-import Home from "./pages/Home"
+import {Outlet} from "react-router-dom";
+import Header from "./components/Header";
 
 const Layout = () => {
     return (
         <>
-        <Home />
+            
+            <main>
+                <Outlet />
+            </main>
         </>
     );
 };

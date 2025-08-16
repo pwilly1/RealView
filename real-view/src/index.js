@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import Home from './pages/Home';
 import Listings from './pages/Listings';
+import ListingDetail from './pages/ListingDetail';
 import About from './pages/About';
 import Agents from './pages/Agents';
 import Stats from './pages/Stats';
@@ -16,13 +17,15 @@ function App() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Layout />} />
-          <Route index element={<Home />} />
-          <Route path="listings" element={<Listings />} />
-          <Route path="about" element={<About />} />
-          <Route path="agents" element={<Agents />} />
-          <Route path="stats" element={<Stats />} />
-          <Route path="sell" element={<Sell />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="listings" element={<Listings />} />
+            <Route path="listings/:id" element={<ListingDetail />} />
+            <Route path="about" element={<About />} />
+            <Route path="agents" element={<Agents />} />
+            <Route path="stats" element={<Stats />} />
+            <Route path="sell" element={<Sell />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>

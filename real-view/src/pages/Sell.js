@@ -10,6 +10,8 @@ import axios from "axios";
 const Sell = () => {
   const [listings, setListings] = useState([]);
   const [showSellerForm, setShowSellerForm] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // Fetch listings on component mount
   useEffect(() => {
@@ -18,16 +20,21 @@ const Sell = () => {
 
   const fetchListings = async () => {
     try {
+      setLoading(true);
       const response = await axios.get("https://react-backend-4pwh.onrender.com/api/listings");
       setListings(response.data);
     } catch (error) {
       console.error("Error fetching listings:", error);
+      setError('Failed to fetch listings');
+    } finally {
+      setLoading(false);
     }
   };
 
   // Handle adding a new listing
   const handleNewListing = (newListing) => {
     setListings((prevListings) => [...prevListings, newListing]);
+    setShowSellerForm(false); // Hide form after successful submission
   };
 
   // Handle updates to an existing listing
@@ -49,32 +56,90 @@ const Sell = () => {
   return (
     <main className="sell-page">
       <Header />
-      <section className="choose-role">
-        <h2>Manage Your Listings</h2>
-        <div className="options">
-          <button onClick={() => setShowSellerForm((prev) => !prev)}>
-            {showSellerForm ? "Hide Form" : "Add New Listing"}
-          </button>
-        </div>
-      </section>
+      <section className="sell-container">
+        <div className="container">
+          <h2>Manage Your Listings</h2>
+          <p className="sell-intro">
+            List your property with RealView and reach thousands of potential buyers. 
+            Our platform makes it easy to showcase your property and connect with serious buyers.
+          </p>
+          
+          <div className="action-section">
+            <button 
+              className="btn toggle-form-btn" 
+              onClick={() => setShowSellerForm((prev) => !prev)}
+            >
+              {showSellerForm ? (
+                <>
+                  <i className="fas fa-times"></i> Hide Form
+                </>
+              ) : (
+                <>
+                  <i className="fas fa-plus"></i> Add New Listing
+                </>
+              )}
+            </button>
+          </div>
 
-      {showSellerForm && <SellForm onNewListing={handleNewListing} />}
-
-      <section className="listing-management">
-        <h2>Your Listings</h2>
-        <div className="listing-grid">
-          {listings.map((listing) => (
-            <div key={listing._id} className="listing-item">
-              <img src={listing.img_name} alt={listing.address} />
-              <h3>{listing.address}</h3>
-              <p>Price: {listing.price}</p>
-              <p>Beds: {listing.beds}</p>
-              <p>Baths: {listing.baths}</p>
-              <p>Sqft: {listing.sqft}</p>
-              <EditListing listing={listing} onUpdate={handleUpdate} />
-              <DeleteListing listingId={listing._id} onDelete={handleDelete} />
+          {showSellerForm && (
+            <div className="form-section">
+              <SellForm onNewListing={handleNewListing} />
             </div>
-          ))}
+          )}
+
+          <section className="listing-management">
+            <h3>Your Current Listings</h3>
+            
+            {loading && (
+              <div className="loading-state">
+                <i className="fas fa-spinner fa-spin"></i>
+                <p>Loading your listings...</p>
+              </div>
+            )}
+            
+            {error && (
+              <div className="error-state">
+                <i className="fas fa-exclamation-triangle"></i>
+                <p>{error}</p>
+                <button className="btn btn-secondary" onClick={fetchListings}>
+                  Try Again
+                </button>
+              </div>
+            )}
+            
+            {!loading && !error && listings.length === 0 && (
+              <div className="empty-state">
+                <i className="fas fa-home"></i>
+                <p>You haven't listed any properties yet.</p>
+                <p>Click "Add New Listing" to get started!</p>
+              </div>
+            )}
+            
+            {!loading && !error && listings.length > 0 && (
+              <div className="listing-grid">
+                {listings.map((listing) => (
+                  <div key={listing._id} className="listing-item">
+                    <div className="listing-image">
+                      <img src={listing.img_name} alt={listing.address} />
+                    </div>
+                    <div className="listing-details">
+                      <h4>{listing.address}</h4>
+                      <div className="listing-info">
+                        <span><i className="fas fa-dollar-sign"></i> {listing.price}</span>
+                        <span><i className="fas fa-bed"></i> {listing.beds} Beds</span>
+                        <span><i className="fas fa-bath"></i> {listing.baths} Baths</span>
+                        <span><i className="fas fa-ruler-combined"></i> {listing.sqft} sqft</span>
+                      </div>
+                      <div className="listing-actions">
+                        <EditListing listing={listing} onUpdate={handleUpdate} />
+                        <DeleteListing listingId={listing._id} onDelete={handleDelete} />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
         </div>
       </section>
     </main>

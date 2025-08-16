@@ -12,56 +12,63 @@ const Listings = () => {
   useEffect(() => {
     (async () => {
       const response = await axios.get("https://react-backend-4pwh.onrender.com/api/listings");
+      console.log('All listings data:', response.data);
+      if (response.data.length > 0) {
+        console.log('First listing structure:', response.data[0]);
+      }
       setlistings(response.data);
     })();
   }, []); 
   
   return (
-    <div className="property-listings-page">
+    <>
       <Header />
-      <main className="property-listings">
-        <h2>Property Listings</h2>
-        
-        <section className="filter-section">
-          <button>Apply Filters</button>
-          <select>
-            <option>Location</option>
-          </select>
-          <select>
-            <option>Price Range</option>
-          </select>
-          <select>
-            <option>Property Type</option>
-          </select>
-          <select>
-            <option>Bedrooms</option>
-          </select>
-          <select>
-            <option>Bathrooms</option>
-          </select>
-          <select>
-            <option>Amenities</option>
-          </select>
-          <div className="map-placeholder">
-            <p>Property Locations Map</p>
-            <div className="map-circle"></div>
+      <div className="property-listings-page">
+        <main className="property-listings">
+          <h2>Property Listings</h2>
+          
+          <section className="filter-section">
+            <button>Apply Filters</button>
+            <select>
+              <option>Location</option>
+            </select>
+            <select>
+              <option>Price Range</option>
+            </select>
+            <select>
+              <option>Property Type</option>
+            </select>
+            <select>
+              <option>Bedrooms</option>
+            </select>
+            <select>
+              <option>Bathrooms</option>
+            </select>
+            <select>
+              <option>Amenities</option>
+            </select>
+            <div className="map-placeholder">
+              <p>Property Locations Map</p>
+              <div className="map-circle"></div>
+            </div>
+          </section>
+          <div className="listing-grid">
+            {listings.map((listing) => (
+              <Listing
+                key={listing._id || listing.id}
+                id={listing._id || listing.id}
+                image={listing.img_name} 
+                title={listing.image_name} 
+                address={listing.address} 
+                price={listing.price} 
+                bedrooms={listing.beds}
+                bathrooms={listing.baths}
+              />
+            ))}
           </div>
-        </section>
-        <div className="listing-grid">
-          {listings.map((listing) => (
-            <Listing
-              image={listing.img_name} 
-              title={listing.image_name} 
-              address={listing.address} 
-              price={listing.price} 
-              beds={listing.beds}
-              baths={listing.baths}
-              sqft={listing.sqft}
-            />
-          ))}
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 };
 

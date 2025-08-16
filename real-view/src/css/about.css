@@ -1,47 +1,291 @@
-/* About Us Page */
+/* About Page Styles */
+.about-page {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
 .about-us {
-    text-align: center;
-    padding: 20px;
-    max-width: 800px;
+    padding: 80px 20px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
+.about-us .container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    display: block; /* Override flex from global CSS */
+}
+
+.about-us .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #1d3135, #28a745);
+}
+
 .about-us h2 {
-    font-size: 32px;
-    text-decoration: underline;
+    font-size: 3rem;
+    color: #1d3135;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
 }
 
-.about-us p {
-    font-size: 18px;
-    line-height: 1.6;
+.about-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #1d3135, #28a745);
+    border-radius: 2px;
+}
+
+/* Mission Statement */
+.mission-statement {
+    background: linear-gradient(135deg, #1d3135, #2c4a52);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-statement::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain3" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain3)"/></svg>');
+    opacity: 0.3;
+}
+
+.mission-statement p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Company Overview */
+.company-overview {
+    margin-bottom: 50px;
+}
+
+.company-overview h3 {
+    font-size: 2rem;
+    color: #1d3135;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.company-overview p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
     margin-bottom: 20px;
+    text-align: left;
 }
 
-.about-us h3 {
-    font-size: 28px;
-    margin-top: 20px;
-    font-weight: bold;
+/* Values Section */
+.values-section {
+    margin-bottom: 50px;
+}
+
+.values-section h3 {
+    font-size: 2rem;
+    color: #1d3135;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.value-item {
+    background: #f8f9fa;
+    padding: 30px 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.value-item h4 {
+    font-size: 1.25rem;
+    color: #1d3135;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.value-item p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+.cta-section h3 {
+    font-size: 1.75rem;
+    color: #1d3135;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 25px;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.button {
-    display: inline-block;
+.buttons .btn {
     padding: 15px 30px;
-    background-color: #8c8c8c;
-    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.button:hover {
-    background-color: #6e6e6e;
+.buttons .btn:first-child {
+    background: linear-gradient(135deg, #1d3135, #28a745);
+    color: white;
+}
+
+.buttons .btn:last-child {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+}
+
+.buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us {
+        padding: 40px 15px;
+    }
+    
+    .about-us .container {
+        padding: 40px 25px;
+    }
+    
+    .about-us h2 {
+        font-size: 2.5rem;
+    }
+    
+    .mission-statement {
+        padding: 30px 25px;
+    }
+    
+    .mission-statement p {
+        font-size: 1.1rem;
+    }
+    
+    .company-overview h3,
+    .values-section h3 {
+        font-size: 1.75rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cta-section {
+        padding: 30px 25px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us h2 {
+        font-size: 2rem;
+    }
+    
+    .about-us .container {
+        padding: 30px 20px;
+    }
+    
+    .mission-statement {
+        padding: 25px 20px;
+    }
+    
+    .company-overview p {
+        font-size: 1rem;
+    }
+    
+    .value-item {
+        padding: 25px 20px;
+    }
+    
+    .value-item i {
+        font-size: 2rem;
+    }
 }
